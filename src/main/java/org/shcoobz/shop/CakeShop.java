@@ -10,11 +10,11 @@ import org.shcoobz.oven.PancakeOven;
  */
 
 public class CakeShop {
-  private int income;
+  private int price;
 
   // constructor
   public CakeShop() {
-    this.income = 0; // at beginning initialize with 0
+    this.price = 0; // at beginning initialize with 0
   }
 
   private String capitalizeFirstLetter(String input) {
@@ -31,20 +31,18 @@ public class CakeShop {
 
   // sells cake of specified flavour using provided oven
   // increments income based on cake's price
-  public void sellCake(Oven oven, Flavour flavour) {
+  public OrderDetail sellCake(Oven oven, Flavour flavour) {
     String capitalizedFlavour = capitalizeFirstLetter(flavour.name());
     String cakeType = getCakeType(oven);
 
     try {
       Cake cake = oven.bakeCake(flavour);
-      income += cake.getPrice();
-      String priceInEuros = formatPrice(cake.getPrice());
+      price += cake.getPrice();
 
-      System.out.println(cakeType + " - " + capitalizedFlavour +
-          " - " + priceInEuros);
+      return new OrderDetail(cakeType, capitalizedFlavour, cake.getPrice());
     } catch (IllegalStateException e) {
-      System.out.println("Sorry, cannot bake: " + cakeType + " - " + capitalizedFlavour +
-          " - " + e.getMessage());
+      // Handle exception
+      return null;
     }
   }
 
@@ -57,7 +55,7 @@ public class CakeShop {
   }
 
   // gets total income of cake shop in a formatted string
-  public String getIncome() {
-    return formatPrice(income);
+  public String getCost() {
+    return formatPrice(price);
   }
 }

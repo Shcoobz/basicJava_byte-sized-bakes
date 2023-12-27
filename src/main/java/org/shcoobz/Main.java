@@ -1,38 +1,49 @@
 package org.shcoobz;
 
 import org.shcoobz.cake.Flavour;
-import org.shcoobz.oven.ChimneyCakeOven;
-import org.shcoobz.oven.PancakeOven;
+import org.shcoobz.oven.Oven;
 import org.shcoobz.shop.CakeShop;
+import org.shcoobz.shop.OrderManager;
+import org.shcoobz.shop.OvenFactory;
+import org.shcoobz.ui.UserInterface;
 
 public class Main {
+
   public static void main(String[] args) {
     CakeShop shop = new CakeShop();
-    PancakeOven pancakeOven = new PancakeOven(true);
-    PancakeOven pancakeOvenWithoutOil = new PancakeOven(false);
-    ChimneyCakeOven chimneyCakeOven = new ChimneyCakeOven();
+    OrderManager orderManager = new OrderManager(shop);
+    OvenFactory ovenFactory = new OvenFactory();
+    UserInterface ui = new UserInterface();
 
-    System.out.println("Sold:");
+    Oven pancakeOven = ovenFactory.createPancakeOven(true);
+    Oven chimneyCakeOven = ovenFactory.createChimneyCakeOven();
+    boolean firstItemOrdered = false;
 
-    // selling pancakes
-    shop.sellCake(pancakeOven, Flavour.PLAIN);
-    shop.sellCake(pancakeOven, Flavour.VANILLA);
-    shop.sellCake(pancakeOven, Flavour.CHOCOLATE);
-    shop.sellCake(pancakeOven, Flavour.STRAWBERRY);
+    ui.displayIntro();
 
-    System.out.println("");
+    while (true) {
+      ui.displayMenu(firstItemOrdered);
+      int choice = ui.getUserChoice();
 
-    // selling pancake - no oil
-    shop.sellCake(pancakeOvenWithoutOil, Flavour.PLAIN);
+      if (firstItemOrdered && choice == 3) {
+        break;
+      }
 
-    System.out.println("");
+      Oven selectedOven = getSelectedOven(choice, pancakeOven, chimneyCakeOven);
+      if (selectedOven != null) {
+        Flavour selectedFlavour = ui.getUserFlavourChoice();
+        orderManager.processOrder(selectedOven, selectedFlavour);
+        firstItemOrdered = true;
+      }
+    }
+    ui.displayOrderSummary(orderManager.getOrders());
+    ui.displayTotalCost(shop.getCost());
+    ui.closeScanner();
+  }
 
-    // selling chimney cakes
-    shop.sellCake(chimneyCakeOven, Flavour.PLAIN);
-    shop.sellCake(chimneyCakeOven, Flavour.VANILLA);
-    shop.sellCake(chimneyCakeOven, Flavour.CHOCOLATE);
-    shop.sellCake(chimneyCakeOven, Flavour.STRAWBERRY);
-
-    System.out.println("\nTotal: " + shop.getIncome());
+  private static Oven getSelectedOven(int choice, Oven pancakeOven, Oven chimneyCakeOven) {
+    return choice == 1 ? pancakeOven : (choice == 2 ? chimneyCakeOven : null);
   }
 }
+
+

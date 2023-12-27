@@ -27,6 +27,6 @@ class CakeShopTest {
     CakeShop shop = new CakeShop();
     shop.sellCake(oven, flavour);
 
-    assertEquals(expectedIncome, shop.getIncome());
+    assertEquals(expectedIncome, shop.getCost());
   }
 }
