@@ -33,15 +33,22 @@ public class UserInterface {
    * Displays the ASCII art logo of the cake shop.
    */
   public void displayCakeShopLogo() {
-    System.out.println("    ____            _                           _                    _     ____            _                 ");
-    System.out.println("   |  _ \\          | |                         (_)                  | |   |  _ \\          | |                ");
-    System.out.println("   | |_) |  _   _  | |_    ___   ______   ___   _   ____   ___    __| |   | |_) |   __ _  | | __   ___   ___ ");
-    System.out.println("   |  _ <  | | | | | __|  / _ \\ |______| / __| | | |_  /  / _ \\  / _` |   |  _ <   / _` | | |/ /  / _ \\ / __|");
-    System.out.println("   | |_) | | |_| | | |_  |  __/          \\__ \\ | |  / /  |  __/ | (_| |   | |_) | | (_| | |   <  |  __/ \\__ \\");
-    System.out.println("   |____/   \\__, |  \\__|  \\___|          |___/ |_| /___|  \\___|  \\__,_|   |____/   \\__,_| |_|\\_\\  \\___| |___/");
-    System.out.println("             __/ |                                                                                           ");
-    System.out.println("            |___/                                                                                            ");
-
+    System.out.println("    ____            _                           _                    _   ");
+    System.out.println("   |  _ \\          | |                         (_)                  | |  ");
+    System.out.println("   | |_) |  _   _  | |_    ___   ______   ___   _   ____   ___    __| |  ");
+    System.out.println("   |  _ <  | | | | | __|  / _ \\ |______| / __| | | |_  /  / _ \\  / _` |  ");
+    System.out.println("   | |_) | | |_| | | |_  |  __/          \\__ \\ | |  / /  |  __/ | (_| |  ");
+    System.out.println("   |____/   \\__, |  \\__|  \\___|          |___/ |_| /___|  \\___|  \\__,_|  ");
+    System.out.println("             __/ |                                                        ");
+    System.out.println("            |___/                                                         ");
+    System.out.println("                  ____            _                                       ");
+    System.out.println("                 |  _ \\          | |                                      ");
+    System.out.println("                 | |_) |   __ _  | | __   ___   ___                      ");
+    System.out.println("                 |  _ <   / _` | | |/ /  / _ \\ / __|                     ");
+    System.out.println("                 | |_) | | (_| | |   <  |  __/ \\__ \\                     ");
+    System.out.println("                 |____/   \\__,_| |_|\\_\\  \\___| |___/                     ");
+    System.out.println("                                                                         ");
+    System.out.println("                                                                         ");
   }
 
   /**

@@ -1,6 +1,6 @@
 # Cake Shop Management System
 
-![Byte-sized Bakes Logo](src/main/resources/img/bytesizedBakes.png)
+![Byte-sized Bakes Logo](src/main/resources/img/byte-sized-bakes.png)
 
 ## Project Overview
 This project is a Java-based system for managing a cake shop. It simulates the process of ordering different types of cakes with various flavors, calculating the cost, and managing orders.
