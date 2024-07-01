@@ -1,60 +1,41 @@
 # basicJava_Byte-Sized-Bakes: [LIVE DEMO](https://replit.com/@shcoobz/basicJava-byte-sized-bakes)
 
-![Byte-sized Bakes Logo](src/main/resources/img/byte-sized-bakes.png)
+![basicJava_Byte-Sized-Bakes](src/main/resources/img/byte-sized-bakes.png)
 
-## Project Overview
+## Summary
 
-This project is a Java-based system for managing a cake shop. It simulates the process of ordering different types of cakes with various flavors, calculating the cost, and managing orders.
+basicJava_Byte-Sized-Bakes provides a Java-based system for managing a cake shop. It features an interactive system for ordering different types of cakes with various flavors, calculating costs, and handling the complete order management process.
+
+The core functionality includes:
+
+- Choosing from different types of cakes like Pancakes and Chimney Cakes.
+- Selecting flavors for cakes with additional costs.
+- Calculating the total cost of each order.
+- Managing cake baking processes across different oven types.
 
 ## Features
 
-- Choose between different types of cakes (Pancakes, Chimney Cakes).
-- Select flavors for the cakes with associated additional costs.
-- Calculate the total cost of orders.
-- Handle cake baking processes for different oven types.
+### Cake Selection
 
-## Classes and Their Functionalities
+Customers can choose between various cake types, each offering different customization options for flavors and sizes.
 
-### `Cake`
+### Dynamic Pricing
 
-Represents a cake with a specific flavor and base price. It calculates the total price based on these attributes.
+The system dynamically calculates the cost based on selections such as cake type, size, and flavor, ensuring accurate billing.
 
-### `Flavour`
+### Order Management
 
-An enumeration that defines different flavors of cakes, each with an associated additional cost.
+Efficiently handles the ordering process from start to finish, keeping track of all customer orders and their statuses.
 
-### `Oven` (Interface)
+### Baking Process Automation
 
-An interface representing an oven that can bake cakes with a specified flavor.
+Integrates different oven types to automate the baking process, optimizing baking time and reducing manual errors.
 
-### `ChimneyCakeOven`
+## Technologies
 
-An implementation of the `Oven` interface for baking chimney cakes.
+- Java: Utilized for robust backend development and ensuring reliable data management.
+- Object-Oriented Programming (OOP): Employs OOP principles for structured and modular code, enhancing maintainability and scalability.
 
-### `PancakeOven`
+---
 
-An implementation of the `Oven` interface for baking pancakes. It can throw an exception if there's no oil.
-
-### `CakeShop`
-
-Represents a cake shop capable of selling different types of cakes. It manages orders and calculates total income.
-
-### `OrderDetail`
-
-Stores details of a cake order, including the type of cake, flavor, and cost.
-
-### `OrderManager`
-
-Manages the process of ordering cakes, keeping track of all orders made.
-
-### `OvenFactory`
-
-A factory class for creating instances of different `Oven` types.
-
-### `UserInterface`
-
-Manages user interaction, displaying menus, choices, and order details.
-
-### `Main`
-
-The main class that orchestrates the flow of the application, integrating all components.
+_Note: This document provides an overview of basicJava_Byte-Sized-Bakes. For detailed instructions and more information, please refer to the source code documentation._
