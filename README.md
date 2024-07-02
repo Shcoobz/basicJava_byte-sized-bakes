@@ -1,4 +1,4 @@
-# basicJava_Byte-Sized-Bakes: [LIVE DEMO](https://replit.com/@shcoobz/basicJava-byte-sized-bakes)
+# basicJava_Byte Sized Bakes: [LIVE DEMO](https://replit.com/@shcoobz/basicJava-byte-sized-bakes)
 
 ![basicJava_Byte-Sized-Bakes](src/main/resources/img/byte-sized-bakes.png)
 
